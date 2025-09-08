@@ -8,16 +8,17 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
 public class RoleServiceImpl implements RoleService {
     private final RoleRepo roleRepo;
 
     public RoleServiceImpl(RoleRepo roleRepo) {
         this.roleRepo = roleRepo;
     }
-
+    
+    @Transactional(readOnly = true)
     @Override
     public List<Role> getAllRoles() {
         return roleRepo.findAll();
     }
+
 }
