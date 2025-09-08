@@ -15,10 +15,11 @@ public class RoleServiceImpl implements RoleService {
         this.roleRepo = roleRepo;
     }
     
-    @Transactional(readOnly = true)
     @Override
+    @Transactional(readOnly = true)
     public List<Role> getAllRoles() {
         return roleRepo.findAll();
     }
 
 }
+
